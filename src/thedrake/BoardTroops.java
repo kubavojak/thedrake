@@ -1,12 +1,16 @@
 package thedrake;
 
+import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
-public class BoardTroops {
+public class BoardTroops implements JSONSerializable {
     private final PlayingSide playingSide;
     private final Map<BoardPos, TroopTile> troopMap;
     private final TilePos leaderPosition;
@@ -138,5 +142,32 @@ public class BoardTroops {
         TilePos newLeaderPos = target.equals(leaderPosition) ? TilePos.OFF_BOARD : leaderPosition;
 
         return new BoardTroops(playingSide, newTroopMap, newLeaderPos, guards);
+    }
+
+    @Override
+    public void toJSON(PrintWriter writer) {
+        writer.print("{");
+        writer.print("\"side\":");
+        playingSide.toJSON(writer);
+        writer.print(",\"leaderPosition\":");
+        leaderPosition.toJSON(writer);
+        writer.print(",\"guards\":" + guards);
+        writer.print(",\"troopMap\":{");
+
+        List<BoardPos> sortedKeys = new ArrayList<>(troopMap.keySet());
+        sortedKeys.sort(Comparator.comparing(BoardPos::toString));
+
+        for (int i = 0; i < sortedKeys.size(); i++) {
+            BoardPos pos = sortedKeys.get(i);
+            pos.toJSON(writer);
+            writer.print(":");
+            troopMap.get(pos).toJSON(writer);
+            if (i < sortedKeys.size() - 1) {
+                writer.print(",");
+            }
+        }
+
+        writer.print("}");
+        writer.print("}");
     }
 }
