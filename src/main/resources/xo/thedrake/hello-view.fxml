@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="xo.thedrake.HelloController" stylesheets="@styles.css">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Button text="Pass &amp; Play" onAction="#onPassAndPlay" styleClass="btn"/>
+    <Button text="Single Player" onAction="#onSinglePlayer" styleClass="btn"/>
+    <Button text="Online Game" onAction="#onOnlineGame" styleClass="btn"/>
+
+    <HBox styleClass="bottom-row">
+    <Button text="Setting" onAction="#onSetting" styleClass="small-btn"/>
+    <Button text="Exit" onAction="#onExit" styleClass="small-btn"/>
+    </HBox>
+</VBox>

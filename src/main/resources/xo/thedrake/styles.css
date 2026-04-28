@@ -1,0 +1,81 @@
+.root {
+    -fx-background-image: url("brown-natural-wood-background.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+}
+
+.menu {
+    -fx-alignment: center;
+    -fx-spacing: 18;
+    -fx-padding: 60;
+}
+
+.menu-panel {
+    -fx-background-color: rgba(8, 4, 1, 0.70);
+    -fx-padding: 40 60 40 60;
+    -fx-border-color: #9a6e1a;
+    -fx-border-width: 1;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.btn {
+    -fx-min-width: 400px;
+    -fx-padding: 15 20 15 20;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0d080;
+    -fx-background-color: linear-gradient(to bottom, rgba(120, 60, 10, 0.88), rgba(50, 20, 2, 0.92));
+    -fx-border-color: #b87820;
+    -fx-border-width: 2;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #000000cc, 10, 0, 0, 3);
+}
+
+.btn:hover {
+    -fx-background-color: linear-gradient(to bottom, rgba(180, 80, 10, 0.95), rgba(80, 30, 4, 0.95));
+    -fx-border-color: #e8a030;
+    -fx-text-fill: #ffffff;
+    -fx-effect: dropshadow(gaussian, #e8a03088, 24, 0, 0, 0);
+}
+
+.btn:pressed {
+    -fx-scale-x: 0.985;
+    -fx-scale-y: 0.985;
+    -fx-border-color: #805010;
+}
+
+.bottom-row {
+    -fx-alignment: center;
+    -fx-spacing: 20;
+}
+
+.small-btn {
+    -fx-pref-width: 190px;
+    -fx-padding: 10 20 10 20;
+    -fx-font-family: "Georgia";
+    -fx-font-size: 13px;
+    -fx-text-fill: #c89840;
+    -fx-background-color: rgba(15, 8, 2, 0.82);
+    -fx-border-color: #7a5010;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 2;
+    -fx-background-radius: 2;
+    -fx-cursor: hand;
+}
+
+.small-btn:hover {
+    -fx-text-fill: #f0d080;
+    -fx-border-color: #c07820;
+    -fx-background-color: rgba(70, 32, 4, 0.88);
+}
+
+.btn-exit:hover {
+    -fx-text-fill: #ff7070;
+    -fx-border-color: #aa2020;
+    -fx-background-color: rgba(60, 8, 8, 0.90);
+    -fx-effect: dropshadow(gaussian, #aa202066, 16, 0, 0, 0);
+}
